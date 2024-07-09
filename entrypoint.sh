@@ -17,6 +17,9 @@ else
     else
         echo "HEAD not found. Skipping reset."
     fi
+
+    # Force checkout of the main branch to ensure a clean state
+    git checkout -f main
     git pull origin main
     cd /data/ente/web
     git submodule update --recursive
