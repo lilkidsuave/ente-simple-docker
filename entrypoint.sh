@@ -28,12 +28,6 @@ fi
 # Install dependencies
 yarn install
 
-# Install peer dependencies
-yarn add @mui/material@^5.4.1 @mui/system@^5.4.1 react@^17.0.2 react-dom@^17.0.2
-
-# Ensure photoswipe is installed
-yarn add photoswipe
-
 # Build the application
 if [ -d "/data/ente/web/apps/photos/out" ]; then
     echo "Removing previous build directory."
