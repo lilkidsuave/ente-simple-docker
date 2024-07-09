@@ -11,8 +11,12 @@ else
     cd /data/ente
     # Remove any existing lock files
     rm -f .git/index.lock
-    # Reset the repository to ensure a clean state
-    git reset --hard HEAD
+    # Check if HEAD exists before attempting reset
+    if git rev-parse --verify HEAD >/dev/null 2>&1; then
+        git reset --hard HEAD
+    else
+        echo "HEAD not found. Skipping reset."
+    fi
     git pull origin main
     cd /data/ente/web
     git submodule update --recursive
