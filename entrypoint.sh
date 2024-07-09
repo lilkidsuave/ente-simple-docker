@@ -25,20 +25,14 @@ else
     git submodule update --recursive
 fi
 
-# Install dependencies at the root level
+# Install dependencies
 yarn install
 
-# Navigate to the photos workspace
-cd /data/ente/web/packages/photos
-
-# Install peer dependencies for the photos workspace
+# Install peer dependencies
 yarn add @mui/material@^5.4.1 @mui/system@^5.4.1 react@^17.0.2 react-dom@^17.0.2
 
-# Ensure photoswipe is installed in the photos workspace
+# Ensure photoswipe is installed
 yarn add photoswipe
-
-# Navigate back to the web directory
-cd /data/ente/web
 
 # Build the application
 if [ -d "/data/ente/web/apps/photos/out" ]; then
