@@ -1,5 +1,6 @@
 services:
   app:
+    image: ghcr.io/lilkidsuave/ente-simple-docker:latest
     container_name: ente-photos
     environment:
       NEXT_PUBLIC_ENTE_ENDPOINT: "https://foo.bar"
