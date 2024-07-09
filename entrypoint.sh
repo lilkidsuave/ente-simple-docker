@@ -9,6 +9,10 @@ if [ ! -d "/data/ente/.git" ]; then
     git submodule update --init --recursive
 else
     cd /data/ente
+    # Remove any existing lock files
+    rm -f .git/index.lock
+    # Reset the repository to ensure a clean state
+    git reset --hard HEAD
     git pull origin main
     cd /data/ente/web
     git submodule update --recursive
