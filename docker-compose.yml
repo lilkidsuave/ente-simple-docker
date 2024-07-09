@@ -1,0 +1,12 @@
+services:
+  app:
+    container_name: ente-photos
+    environment:
+      NEXT_PUBLIC_ENTE_ENDPOINT: "https://foo.bar"
+      NEXT_PUBLIC_ALBUMS_ENDPOINT: "https://foo.bar"
+    build: .
+    volumes:
+      - ./data:/data
+    ports:
+      - "3000:3000"
+    restart: always
