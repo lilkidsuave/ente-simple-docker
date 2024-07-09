@@ -2,14 +2,14 @@
 # Exit on any error
 set -e
 
-# Clone the repository
+# Clone the repository if it doesn't exist
 if [ ! -d "/data/ente/.git" ]; then
     git clone https://github.com/ente-io/ente.git /data/ente
     cd /data/ente/web
     git submodule update --init --recursive
 else
     cd /data/ente
-    git pull
+    git pull origin main
     cd /data/ente/web
     git submodule update --recursive
 fi
